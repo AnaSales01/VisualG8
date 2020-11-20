@@ -1,0 +1,533 @@
+Algoritmo "Situação de Aprendizagem"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Cládio Iwakami
+// Descrição   : Um sistema para cadastro das informações acadêmicas na Escola.
+// Autor(a)    : Ana Cláudia, Eric Ricardo, Kayque Lucas , Pedro Ezequiel e Richard Ezequiel
+// Data atual  : 18/11/2020
+
+Var
+
+//MENU//
+MENU: real
+
+//VARIÁVEIS DO PROCESSO SELETIVO//
+PRA: vetor [1..20] de caractere  //cadastrar nomes dos alunos para o processo seletivo//
+PRAD: vetor [1..20] de caractere //cadastrar data de nascimento do aluno para o processo seletivo//
+PRRG: vetor [1..20] de caractere //cadastrar o RG do aluno que prestará o processo seletivo//
+PRD: vetor [1..20] de caractere //cadastrar data da prova do processo seletivo//
+PRC: vetor [1..20] de caractere //cadastrar o curso que será aplicado o processo seletivo//
+PR: vetor [1..20] de caractere //resultado final do processo seletivo//
+
+//VARIÁVEIS DO CADASTRO DOS ALUNOS//
+AE: vetor [1..20] de caractere //variável para endereço do aluno//
+ACPF: vetor [1..20] de inteiro //variável para o cpf do aluno//
+ATel: vetor [1..20] de caractere //variável para o telefone do aluno//
+AM: vetor [1..20] de inteiro //variável para a matrícula do aluno//
+AT: vetor [1..20] de inteiro //variável para o código da turma do aluno//
+ATu:vetor [1..20] de caractere //variável para o turno da turma do aluno//
+AMA: vetor [1..20] de caractere //variável para o nome da mãe do aluno//
+AP: vetor [1..20] de caractere //variável para o nome do pai do aluno//
+
+//CADASTRO DOS PROFESSORES//
+PN: vetor [1..10] de caractere //variável para o nome e sobrenome do professor//
+PM: vetor [1..10] de caractere  //variável para o número de matrícula do professor//
+PMT: vetor [1..10] de caractere //variável para o matéria que o professor leciona//
+
+//CADASTRO DAS TURMAS//
+TM: vetor [1..5] de inteiro //variável para o número de matrícula da turma//
+TT: vetor [1..5] de caractere //variável para o turno da turma//
+TC: vetor [1..5] de caractere //variável para o curso da turma//
+comecot,meiot,finalt: inteiro
+Achat: logico
+
+//CADASTRO DAS NOTAS DOS ALUNOS//
+N: vetor[1..4] de real //variável para as notas dos alunos//
+IN:inteiro
+M, S:Real
+
+//MÉDIA DAS TURMAS//
+ST,MT: real
+
+//VARIÁVEIS DE APOIO//
+X,Y,P,R: caractere
+Z,I,J: inteiro
+comeco,meio,final: inteiro
+Acha: logico
+
+Inicio
+
+enquanto (MENU <> 12 faca)
+//MENU DO PROGRAMA//
+
+        escreval("")
+        escreval(" ___________________________________________________________________ ")
+        escreval("|                                                                   |")
+        escreval("|                        SISTEMA DE GESTÃO                          |")
+        escreval("|___________________________________________________________________|")
+        escreval("|                                                                   |")
+        escreval("|                             MENU                                  |")
+        escreval("|___________________________________________________________________|")
+        escreval("|                                                                   |")
+        escreval("| (1) Cadastro no Processo Seletivo                                 |")
+        escreval("|      (2) Resultado do Processo Seletivo                           |")
+        escreval("|      (3) Cadastrar Alunos(as) Aprovados(as) no Processo Seletivo  |")
+        escreval("|    (4) Cadastrar Alunos(as) na Escola                             |")
+        escreval("|         (5)Pesquisar Alunos(as)                                   |")
+        escreval("|     (6) Cadastar Professores(as)                                  |")
+        escreval("|          (7) Pesquisar Professores(as)                            |")
+        escreval("|       (8) Cadastrar Turmas                                        |")
+        escreval("|            (9) Pesquisar Turmas                                   |")
+        escreval("|         (10) Cadastrar Notas                                      |")
+        escreval("|           (11) Resultados                                         |")
+        escreval("|             (12) SAIR DO PROGRAMA                                 |")
+        escreval("|___________________________________________________________________|")
+        escreval("")
+        escreval("Digite o número correspondente a opção que você deseja e pressione ENTER ")
+        escreval("")
+        leia(MENU)
+        limpatela
+
+ //CADASTRO DOS ALUNOS NO SISTEMA//
+                      se (MENU = 1) entao
+ para I de 1 ate 5 passo 1 faca
+             escreval("|===================================================================|")
+             escreval("|          CADASTRO DOS(AS) ALUNOS(AS) NO PROCESSO SELETIVO         |")
+             escreval("|===================================================================|")
+             escreval("")
+             escreval("Digite o Nome Completo do(a) Aluno(a) e pressione ENTER: ")
+             escreval("")
+             leia(PRA[I])
+             escreval("")
+             escreval("Digite a Data de Nascimento do(a) Aluno(a)(ex: 00/00/0000) e pressione ENTER: ")
+             escreval("")
+             leia(PRAD[I])
+             escreval("")
+             escreval("Digite o RG do(a) Aluno(a) (ex: ES 12345678) e pressione ENTER: ")
+             escreval("")
+             leia(PRRG[I])
+             escreval("")
+             escreval("Digite o Curso Pretendido pelo(a) Aluno(a) e pressione ENTER: ")
+             escreval("")
+             leia(PRC[I])
+             escreval("")
+             escreval("Digite a Data da Prova (ex: 00/00/0000) e pressione ENTER: ")
+             escreval("")
+             leia(PRD[I])
+             limpatela
+fimpara
+             fimse
+             
+//RESULTADO DO PROCESSO SELETIVO//
+            se (MENU = 2) entao
+para I de 1 ate 5 faca
+     escreval("")
+     escreval("|====================================================================|")
+     escreval("|                 RESULTADO DO PROCESSO SELETIVO                     |")
+     escreval("|====================================================================|")
+     escreval("")
+     escreval("NOME DO(A) ALUNO(A): ",PRA[I])
+     escreval("")
+     escreval("NÚMERO DO RG: ",PRRG[I])
+     escreval("")
+     escreval("NOME DO CURSO: ",PRC[I])
+     escreval("")
+     escreval("Digite o Resultado do(a) Aluno(a) (APROVADO(A) ou REPROVADO(A)) e pressione ENTER: ")
+     escreval("")
+     leia(PR[I])
+     limpatela
+fimpara
+              fimse
+
+//CADASTRO DOS ALUNOS APROVADOS NA ESCOLA TÉCNICA//
+               se (MENU = 3) entao
+para I de 1 ate 5 faca
+     se (PR[I] = "Aprovado") ou (PR[I] = "Aprovada") entao
+             escreval("|===================================================================|")
+             escreval("|     CADASTRO DOS(AS) ALUNOS(AS) APROVADOS NO PROCESSO SELETIVO    |")
+             escreval("|===================================================================|")
+             escreval("")
+             escreval("NOME DO(A) ALUNO(A): ",PRA[I])
+             escreval("")
+             escreval("DATA DE NASCIMENTO: ",PRAD[I])
+             escreval("")
+             escreval("NÚMERO DO RG: ",PRRG[I])
+             escreval("")
+             escreval("Digite o CPF do(a) Aluno(a) e pressione ENTER: ")
+             escreval("")
+             leia(ACPF[I])
+             escreval("")
+             escreval("Digite o Nome da Mãe do(a) Aluno(a) e pressione ENTER: ")
+             escreval("")
+             leia(AMA[I])
+             escreval("")
+             escreval("Digite o Nome do Pai do(a) Aluno(a) e pressione ENTER: ")
+             escreval("")
+             leia (AP[I])
+             escreval("")
+             escreval("Digite o Endereço do(a) Aluno(a) (ex: rua, nº,bairro-cep-cidade-es) e pressione ENTER: ")
+             escreval("")
+             leia(AE[I])
+             escreval("")
+             escreval("Digite o Telefone do(a) Aluno(a) (ex: (DDD) nº) e pressione ENTER: ")
+             escreval("")
+             leia(ATel[I])
+             escreval("")
+             escreval("Digite o Número da Matrícula do(a) Aluno(a) e pressione ENTER: ")
+             escreval("")
+             leia(AM[I])
+             escreval("")
+             escreval("Digite o Código da Turma do(a) Aluno(a) (OBS: 5 alunos por Turma) e pressione ENTER: ")
+             escreval("")
+             leia(AT[I])
+             escreval("")
+             escreval("CURSO DO(A) ALUNO(A): ",PRC[I])
+             escreval("")
+             escreval("Digite o Turno que o(a) Aluno(a) vai estudar e pressione ENTER: ")
+             escreval("")
+             leia(ATu[I])
+             limpatela
+     fimse
+fimpara
+             fimse
+
+//CADASTRO DOS ALUNOS NA ESCOLA TÉCNICA//
+           se (MENU = 4) entao
+para I de 6 ate 10 faca
+      escreval("")
+      escreval("|==============================================================|")
+      escreval("|          CADASTRO DOS(AS) ALUNOS(AS) NO CURSO TÉCNICO        |")
+      escreval("|==============================================================|")
+      escreval("")
+      escreval("Digite o Nome Completo do(a) Aluno(a) e pressione ENTER: ")
+      escreval("")
+      leia(PRA[I])
+      escreval("")
+      escreval("Digite a Data de Nascimento do(a) Aluno(a) (ex: 00/00/0000) e pressione ENTER: ")
+      escreval("")
+      leia(PRAD[I])
+      escreval("")
+      escreval("Digite o RG do(a) Aluno(a) (ex: ES 12345678) e pressione ENTER: ")
+      escreval("")
+      leia(PRRG[I])
+      escreval("")
+      escreval("Digite o CPF do(a) Aluno(a) e pressione ENTER: ")
+      escreval("")
+      leia(ACPF[I])
+      escreval("")
+      escreval("Digite o Nome da Mãe do(a) Aluno(a) e pressione ENTER: ")
+      escreval("")
+      leia(AMA[I])
+      escreval("")
+      escreval("Digite o Nome do Pai do(a) Aluno(a) e pressione ENTER: ")
+      escreval("")
+      leia (AP[I])
+      escreval("")
+      escreval("Digite o Endereço do(a) Aluno(a) (ex: rua, nº,bairro-cep-cidade-es) e pressione ENTER: ")
+      escreval("")
+      leia(AE[I])
+      escreval("")
+      escreval("Digite o Telefone do(a) Aluno(a) (ex: (DDD) nº) e pressione ENTER: ")
+      escreval("")
+      leia(ATel[I])
+      escreval("")
+      escreval("Digite o Número da Matrícula do(a) Aluno(a) e pressione ENTER: ")
+      escreval("")
+      leia(AM[I])
+      escreval("")
+      escreval("Digite o Código da Turma do(a) Aluno(a) (OBS: 5 alunos por turma) e pressione ENTER: ")
+      escreval("")
+      leia(AT[I])
+      escreval("")
+      escreval("Digite o Curso do(a) Aluno(a) e pressione ENTER")
+      escreval("")
+      leia(PRC[I])
+      escreval("")
+      escreval("Digite o Turno que o(a) Aluno(a) vai estudar e pressione ENTER: ")
+      escreval("")
+      leia(ATu[I])
+      limpatela
+fimpara
+               fimse
+
+//CADASTRO DOS(AS) PROFESSORES(AS)//
+           se (MENU = 6) faca
+para I de 1 ate 5 faca
+     escreval("")
+     escreval("|====================================================================|")
+     escreval("|                  CADASTRO DOS(AS) PROFESSORES(AS)                  |")
+     escreval("|====================================================================|")
+     escreval("")
+     escreval("Digite o Nome Completo do(a) Professor(a) e pressione ENTER: ")
+     escreval("")
+     leia(PN[I])
+     escreval("")
+     escreval("Digite o Número da Matrícula do(a) Professor(a) e pressione ENTER: ")
+     escreval("")
+     leia(PM[I])
+     escreval("")
+     escreval("Digite a Matéria Lecionada pelo(a) Professor(a) e pressione ENTER: ")
+     escreval("")
+     leia(PMT[I])
+     limpatela
+fimpara
+        fimse
+
+//CADASTRO DAS TURMAS//
+           se (MENU = 8) entao
+para I de 1 ate 5 faca
+          escreval("")
+          escreval("|====================================================================|")
+          escreval("|                       CADASTRO DAS TURMAS                          |")
+          escreval("|====================================================================|")
+          escreval("")
+          escreval("Digite o Matrícula da Turma e pressione ENTER: ")
+          leia(TM[I])
+          escreval("")
+          escreval("Digite o Turno da Turma e pressione ENTER: ")
+          escreval("")
+          leia(TT[I])
+          escreval("")
+          escreval("Digite o Curso da Turma e pressione ENTER: ")
+          escreval("")
+          leia(TC[I])
+     limpatela
+     fimpara
+              fimse
+
+//CADASTRO DAS NOTAS NO SITEMA//
+           se (MENU = 10) entao
+para I de 1 ate 10 faca
+    para J de 1 ate 4 faca
+         escreval("")
+         escreval("|====================================================================|")
+         escreval("|                  CADASTRO DAS NOTAS POR ALUNOS(AS)                 |")
+         escreval("|====================================================================|")
+         escreval("")
+         escreval("NOTA DO(A) ALUNO(A): ",PRA[I])
+         escreval("")
+         escreval("TURMA DO(A) ALUNO(A): ",AT[I])
+         escreval("")
+         escreval("Digite a Nota do(a) Aluno(a): ")
+         escreval("")
+         leia(N[J])
+         S <- S + N[j]
+         
+         limpatela
+    fimpara
+fimpara
+           fimse
+
+//MÉDIA DOS ALUNOS//
+        se (MENU = 11) entao
+para I de 1 ate 10 faca
+     para J de 1 ate 4 faca
+          M <- S/4
+          escreval("")
+          escreval("|====================================================================|")
+          escreval("|                        MÉDIA POR ALUNOS(AS)                        |")
+          escreval("|====================================================================|")
+          escreval("")
+          escreval("ALUNO(A): ",PRA[I])
+          escreval("")
+          escreval("TURMA DO(A) ALUNO(A): ",AT[I])
+          escreval("")
+          escreval("TOTAL DAS NOTAS: ",S)
+          escreval("")
+          escreval("MÉDIA: ",M)
+          limpatela
+          ST <- ST + M
+     fimpara
+fimpara
+
+//MÉDIA DA TURMA//
+para I de 1 ate 5 faca
+     para J de 1 ate 4 faca
+          escreval("")
+          escreval("|====================================================================|")
+          escreval("|                      MÉDIA DAS TURMAS                              |")
+          escreval("|====================================================================|")
+          escreval("")
+          MT <- M/5
+          escreval("TURMA: ",TM[I])
+          escreval("")
+          escreval("CURSO: ",TC[I])
+          escreval("")
+          escreval("MÉDIA DA TURMA: ",MT)
+     fimpara
+fimpara
+        fimse
+
+//PESQUISA POR ALUNOS//
+           se (MENU = 5) entao
+para I de 1 ate 19 faca
+    para J de I+1 ate 20 faca
+       se PRA[I] > PRA[J] entao
+          X <- PRA[I]
+          PRA[I] <- PRA[J]
+          PRA[J] <- X
+       fimse
+    fimpara
+fimpara
+
+{PESQUISA BINÁRIA DOS ALUNOS}
+     R <- "Sim"
+ enquanto (R = "Sim") faca
+          escreval("")
+          escreval("        Qual o(a) Aluno(a) você deseja pesquisar?      ")
+          escreval("")
+          leia(P)
+          Comeco <- 1
+          Final <- 20
+          Acha <- falso
+               enquanto (Comeco <= Final) e (Acha = falso) faca
+                        Meio <- (Comeco + Final) div 2
+                             se(P = PRA[meio]) entao
+                                  Acha <- verdadeiro
+                             senao
+                             se (P < PRA[meio]) entao
+                                Final <- Meio - 1
+                             senao
+                                  Comeco <- Meio + 1
+                             fimse
+                             fimse
+               fimenquanto
+                          se (Acha = verdadeiro) entao
+                             escreval("")
+                             escreval("Informações do Aluno pesquisado: ")
+                             escreval("")
+                             escreval(PRA[I])
+                             escreval("")
+                             escreval("TURMA DO(A) ALUNO(A): ",AT[I])
+                             escreval("")
+                             escreval("CURSO DO(A) ALUNO(A): ",PRC[I])
+                             escreval("")
+                             escreval("TURNO DO(A) ALUNO(A): ",ATu[I])
+                             escreval("")
+                             escreval("NOME DA MÃE: ",AMA[I])
+                             escreval("")
+                             escreval("TELEFONE DE CONTATO: ",ATel[I])
+                             escreval("")
+                             escreval("MÉDIA DO(A) ALUNO(A): ",M)
+                          senao
+                               escreval("")
+                               escreval("Aluno não encontrado no sistema!")
+                               escreval("")
+                          fimse
+                               escreval("")
+                               escreval("Deseja continuar? ")
+                               escreval("")
+                               leia(R)
+ fimenquanto
+   fimse
+
+//PESQUISA POR PROFESSORES//
+           se (MENU = 7) entao
+para I de 1 ate 9 faca
+     para J de I+1 ate 10 faca
+          se PN[I] > PN[J] entao
+             Y <- PN[I]
+             PN[I] <- PN[J]
+             PN[J] <- Y
+          fimse
+     fimpara
+fimpara
+
+{PESQUISA BINÁRIA COM OS PROFESSORES}
+          R <- "Sim"
+enquanto (R = "Sim") faca
+         escreval("")
+         escreval("      Qual o(a) Professor(a) você deseja pesquisar?    ")
+         escreval("")
+         leia(P)
+         Comeco <- 1
+         Final <- 10
+         Acha <- falso
+              enquanto (Comeco <= Final) e (Acha = falso) faca
+                       Meio <- (Comeco + Final) div 2
+                            se(P = PN[meio]) entao
+                                 Acha <- verdadeiro
+                            senao
+                            se (P < PN[meio]) entao
+                               Final <- Meio - 1
+                            senao
+                                 Comeco <- Meio + 1
+                            fimse
+                            fimse
+              fimenquanto
+                         se (Acha = verdadeiro) entao
+                            escreval("")
+                            escreval("Informações do(a) Professor(a) pesquisado(a): ")
+                            escreval("")
+                            escreval(PN[I])
+                            escreval("")
+                            escreval("MATÉRIA LECIONADA: ",PMT[I])
+                         senao
+                              escreval("")
+                              escreval(" Professor(a) NÃO encontrado(a) no sistema!")
+                              escreval("")
+                         fimse
+                              escreval("")
+                              escreval("Deseja continuar? ")
+                              escreval("")
+                              leia(R)
+fimenquanto
+           fimse
+           
+//PESQUISA POR TURMAS//
+           se (MENU = 9) entao
+para I de 1 ate 4 faca
+     para J de I+1 ate 5 faca
+          se TM[I] > TM[J] entao
+             Z <- TM[I]
+             TM[I] <- TM[J]
+             TM[J] <- Z
+          fimse
+     fimpara
+fimpara
+
+{PESQUISA BINÁRIA DAS TURMAS}
+  R <- "Sim"
+enquanto (R = "Sim") faca
+         escreval("")
+         escreval("      Qual Turma você deseja pesquisar?    ")
+         escreval("")
+         leia(P)
+         Comeco <- 1
+         Final <- 10
+         Acha <- falso
+              enquanto (Comecot <= Finalt) e (Achat = falso) faca
+                       Meiot <- (Comecot + Finalt) div 2
+                            se (P = "TM[meiot]") entao
+                                 Achat <- verdadeiro
+                            senao
+                            se (P < "TM[meiot]") entao
+                               Finalt <- Meiot - 1
+                            senao
+                                 Comecot <- Meiot + 1
+                            fimse
+                            fimse
+              fimenquanto
+                         se (Acha = verdadeiro) entao
+                            escreval("")
+                            escreval("Informações da Turma pesquisada: ")
+                            escreval("")
+                            escreval([TM[IT]])
+                            escreval("")
+                            escreval("CURSO DA TURMA: ",TC[I])
+                            escreval("")
+                            escreval("MÉDIA DA TURMA: ",M)
+                            escreval("")
+                            escreval("ALUNOS: ",PRA[I])
+                         senao
+                              escreval("")
+                              escreval(" Turma NÃO encontrada no sistema!")
+                              escreval("")
+                         fimse
+                              escreval("")
+                              escreval("Deseja continuar? ")
+                              escreval("")
+                              leia(R)
+                    fimenquanto
+                     fimse
+fimenquanto
+Fimalgoritmo

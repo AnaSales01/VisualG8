@@ -1,0 +1,281 @@
+var
+resposta_start: inteiro
+r: vetor [1..10] de inteiro
+resp: inteiro
+resultado_final: inteiro
+
+inicio
+// Seção de Comandos
+Escreval ("     ___________________________________________________________________ ")
+Escreval ("    |                                                                   |")
+Escreval ("    |                                                                   |")
+Escreval ("    |                         SEJA BEM-VINDO                            |")
+Escreval ("    |                                                                   |")
+Escreval ("    |___________________________________________________________________|")
+
+Escreval ("     ___________________________________________________________________ ")
+Escreval ("    |                                                                   |")
+Escreval ("    |            Digite '1' para responder ao questionário              |")
+Escreval ("    |               Digite '2' para sair do questionário                |")
+Escreval ("    |___________________________________________________________________|")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (resposta_start)
+         
+         se resposta_start = 2 entao
+Escreval
+Escreval ("                 OBRIGADO POR UTILIZAR O NOSSO PROGRAMA!!!               ")
+Escreval ("     =================================================================== ")
+
+senao
+
+limpatela
+
+// PRIMEIRA PERGUNTA:
+
+Escreval
+Escreval ("                            1 - O que é a LGPD ?                         ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) Regulamento que protege os atendentes de telemarketing.          ")
+Escreval ("     2) Lei que protege o maltrato contra os animais.                    ")
+Escreval ("     3) Regulamentação do tratamento dos dados pessoais.                 ")
+Escreval ("     4) Lei que protege os trabalhadores de carga horária abusivas.      ")
+Escreval ("     5) Regulamento que garante a liberdade individual de todos          ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[1])
+         
+limpatela
+// SEGUNDA PERGUNTA:
+
+Escreval
+Escreval ("                         2 - Pra que serve a LGPD ?                      ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) Para proteger minhas fotos.                                      ")
+Escreval ("     2) Proteger os direitos fundamentais de liberdade e privacidade.    ")
+Escreval ("     3) Serve para proteger os funcionários de ataques hackers.          ")
+Escreval ("     4) Ela serve para indenizar as empresas.                            ")
+Escreval ("     5) Para proteger os servidores das empresas.                        ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[2])
+
+limpatela
+// TERCEIRA PERGUNTA:
+
+Escreval
+Escreval ("                          3 - Como a LGPD é aplicada ?                   ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) Ela é aplicada em alguns setores de uma empresa.                 ")
+Escreval ("     2) Ela é aplicavel apenas em empresas grandes.                      ")
+Escreval ("     3) Ela é aplicada apenas no setor de TI.                            ")
+Escreval ("     4) É aplicada a qualquer operação de tratamento de dados pessoais.  ")
+Escreval ("     5) Ela só se aplica no setor de administração.                      ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[3])
+
+limpatela
+// QUARTA PERGUNTA:
+
+Escreval
+Escreval ("                         4 - O que é o Dado Pessoal ?                    ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) É os arquivos pessoais da pessoa.                                ")
+Escreval ("     2) Qualquer informação relacionada a pessoa natural.                ")
+Escreval ("     3) É uma lei que defende a exposição dos dados pessoais.            ")
+Escreval ("     4) Regulamentação que informa os dados vazados por empresas.        ")
+Escreval ("     5) É uma forma de o usuário informar os seus dados.                 ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[4])
+         
+limpatela
+// QUINTA PERGUNTA:
+
+Escreval
+Escreval ("                       5 - O que é o Dado Anonimizado ?                  ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) É um dado relativo a um titular que não possa ser identificado.  ")
+Escreval ("     2) É uma pessoa anonima.                                            ")
+Escreval ("     3) São arquivos que estão na deep web.                              ")
+Escreval ("     4) É um tipo de navegador que oferece a anonimidade ao usuário.     ")
+Escreval ("     5) São diversos dados espalhados na internet anonima.               ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[5])
+         
+limpatela
+// SEXTA PERGUNTA:
+
+Escreval
+Escreval ("                          6 - O que é a Eliminação ?                     ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) É a exclusão de todos os dados do usuário.                       ")
+Escreval ("     2) É a exclusão de todo o sistema.                                  ")
+Escreval ("     3) É a exclusão do dado ou conjunto de dados armazenados.           ")
+Escreval ("     4) Forma como o sistema faz backup dos dados.                       ")
+Escreval ("     5) É apenas uma forma de armazenar os arquivos.                     ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[6])
+         
+limpatela
+// SETIMA PERGUNTA:
+
+Escreval
+Escreval ("                        7 - O que é o Banco de dados ?                   ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) É uma forma de armazenar dados de forma lenta e ineficaz         ")
+Escreval ("     2) É uma forma de conexão única ao usuário.                         ")
+Escreval ("     3) É referente a todas as formas de conexão possiveis com o usuário.")
+Escreval ("     4) É uma forma de se conectar ao sistema.                           ")
+Escreval ("     5) Conjunto de dados pessoais, estabelecidos em um ou vários locais.")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[7])
+         
+limpatela
+// OITAVA PERGUNTA:
+
+Escreval
+Escreval ("                            8 - O que é o Titular ?                      ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) Pessoa a quem se refere os dados pessoais em tratamento.         ")
+Escreval ("     2) É o dono da LGPD.                                                ")
+Escreval ("     3) É a empresa que criou a LGPD.                                    ")
+Escreval ("     4) É um conjunto de empresas que formaram a LGPD.                   ")
+Escreval ("     5) É a pessoa que comprou o dado.                                   ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[8])
+         
+limpatela
+// NONA PERGUNTA:
+
+Escreval
+Escreval ("              9 - Qual das opções abaixo é um direito titular ?          ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) Direito de acesso limitado.                                      ")
+Escreval ("     2) Direito de resposta.                                             ")
+Escreval ("     3) Acesso aos dados.                                                ")
+Escreval ("     4) Limitação dos dados fornecidos.                                  ")
+Escreval ("     5) Acesso ao servidor                                               ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[9])
+         
+limpatela
+// DECIMA PERGUNTA:
+
+Escreval
+Escreval ("             10 - Qual das opções abaixo é uma sanção da LGPD ?          ")
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("     1) Multa horária.                                                   ")
+Escreval ("     2) Proibição incompleta.                                            ")
+Escreval ("     3) Fechar a empresa.                                                ")
+Escreval ("     4) Bloqueio dos dados pessoais.                                     ")
+Escreval ("     5) Ativação dos dados pessoais.                                     ")
+
+Escreval
+Escreval ("                         Digite aqui a sua resposta                      ")
+         leia (r[10])
+
+limpatela
+
+//Escreve a sua parte a partir daqui (LAURA)
+
+resultado_final <- 0
+
+   se (r[1] = 3) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[2] = 2) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[3] = 4) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[4] = 2) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[5] = 1) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[6] = 3) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[7] = 5) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[8] = 1) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[9] = 3) entao
+   resultado_final <- resultado_final + 1
+   fimse
+   se (r[10] = 4) entao
+   resultado_final <- resultado_final + 1
+   fimse
+
+   se (resultado_final = 10) entao
+   Escreval
+Escreval ("                         ·´¯`·­» VOCÊ BRILHOU! «­·´¯`·                    ")
+Escreval ("                         ·´¯`·­» ************* «­·´¯`·                    ")
+   fimse
+   
+   se (resultado_final>= 7 ) entao
+   Escreval
+Escreval ("                               BOM CONHECIMENTO!                          ")
+   fimse
+   
+   se (resultado_final >= 5 ) entao
+   Escreval
+Escreval ("                      Regular, é necessário mais estudos!                 ")
+   fimse
+   
+   se (resultado_final < 5 ) entao
+   Escreval
+Escreval ("                     É necessário que você refaça o teste!                ")
+   fimse
+   
+Escreval
+Escreval ("                          A sua nota é igual a: ", resultado_final         )
+
+//Aparece no final do programa
+Escreval
+Escreval ("                      KINGSTEAM - Ana | Laura | Nicolas                   ")
+Escreval ("                   SENAI FATEC BELO HORIZONTE | 26/10/2020                ")
+Escreval
+Escreval ("     =================================================================== ")
+Escreval
+Escreval ("                           Somos alunos do instrutor:                     ")
+Escreval
+Escreval ("                                  (¯`v´¯)                                 ")
+Escreval ("                                   `.¸.Claudio                            ")
+
+
+
+
+fimse
+fimalgoritmo
